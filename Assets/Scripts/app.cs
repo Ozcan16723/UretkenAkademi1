@@ -26,15 +26,16 @@ public class app : MonoBehaviour
                 divisibleByFive.Add(i);
         }
 
-        writer(allValues);
-        writer(divisibleByTwo);
-        writer(divisibleByThree);
-        writer(divisibleByFour);
-        writer(divisibleByFive);
+        writer(allValues, "All values: ");
+        writer(divisibleByTwo, "Divisible By two");
+        writer(divisibleByThree, "Divisible by three");
+        writer(divisibleByFour, "Divisible by four");
+        writer(divisibleByFive, "Divisible by five");
     }
 
-    void writer(List<int> list)
+    void writer(List<int> list, string condition)
     {
+        print(condition);
         foreach (var item in list)
         {
             print(item);
