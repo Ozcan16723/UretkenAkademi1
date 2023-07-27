@@ -5,40 +5,30 @@ using UnityEngine;
 public class app : MonoBehaviour
 {
     [SerializeField] int value1, value2;
-    List<int> allValues = new List<int>();
-    List<int> divisibleByTwo = new List<int>();
-    List<int> divisibleByThree = new List<int>();
-    List<int> divisibleByFour = new List<int>();
-    List<int> divisibleByFive = new List<int>();
+    string allValues = " Tüm Deðerler: ";
+    string divisibleByTwo = " Ýkiye Tam Bölünenler: ";
+    string divisibleByThree = " Üçe Tam Bölünenler: ";
+    string divisibleByFour = " Dörde Tam Bölünenler: ";
+    string divisibleByFive = " Beþe Tam Bölünenler: ";
 
     private void Start()
     {
         for (int i = value1; i <= value2; i++)
         {
-            allValues.Add(i);
+            allValues += " -" + i.ToString();
             if (i % 2 == 0)
-                divisibleByTwo.Add(i);
+                divisibleByTwo += " -" + i.ToString();
             if (i % 3 == 0)
-                divisibleByThree.Add(i);
+                divisibleByThree += " -" + i.ToString();
             if (i % 4 == 0)
-                divisibleByFour.Add(i);
+                divisibleByFour += " -" + i.ToString();
             if (i % 5 == 0)
-                divisibleByFive.Add(i);
+                divisibleByFive += " -" + i.ToString();
         }
-
-        writer(allValues, "All values: ");
-        writer(divisibleByTwo, "Divisible By two");
-        writer(divisibleByThree, "Divisible by three");
-        writer(divisibleByFour, "Divisible by four");
-        writer(divisibleByFive, "Divisible by five");
-    }
-
-    void writer(List<int> list, string condition)
-    {
-        print(condition);
-        foreach (var item in list)
-        {
-            print(item);
-        }
+        print(allValues);
+        print(divisibleByTwo);
+        print(divisibleByThree);
+        print(divisibleByFour);
+        print(divisibleByFive);
     }
 }
